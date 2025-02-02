@@ -1,0 +1,8 @@
+{
+    "flutter-files.menu.model": true,
+    "flutter-files.menu.provider": true,
+    "flutter-files.menu.repository": true,
+    "gitlens.changes.toggleMode": "file",
+    "editor.cursorStyle": "line",
+    "editor.definitionLinkOpensInPeek": false
+}
