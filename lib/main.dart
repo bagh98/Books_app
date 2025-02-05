@@ -2,6 +2,7 @@ import 'package:ebook_app/Features/Splash/presentation/views/splash_view.dart';
 import 'package:ebook_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const BooksApp());
@@ -17,6 +18,7 @@ class BooksApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: KPrimaryColor,
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
       home: SplashView(),
     );
