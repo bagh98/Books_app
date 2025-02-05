@@ -1,7 +1,5 @@
-import 'package:ebook_app/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
 import 'best_seller_list_view_item.dart';
 import 'custom_app_bar.dart';
