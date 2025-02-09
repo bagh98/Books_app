@@ -1,9 +1,11 @@
 import 'package:ebook_app/Features/home/presentation/views/widgets/book_rating.dart';
+import 'package:ebook_app/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:ebook_app/Features/home/presentation/views/widgets/featured_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
 import 'costom_book_details_app_bar.dart';
 import 'custom_book_item.dart';
 
@@ -17,13 +19,13 @@ class BookDetailsViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(
         children: [
-          CostomBookDetailsAppBar(),
+          const CostomBookDetailsAppBar(),
           const SizedBox(
             height: 20,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .2),
-            child: CustomBookImage(),
+            child: const CustomBookImage(),
           ),
           const SizedBox(
             height: 40,
@@ -45,9 +47,15 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 6,
+            height: 18,
           ),
-          BookRating(),
+          const BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          const SizedBox(
+            height: 37,
+          ),
+          const BooksAction(),
         ],
       ),
     );
