@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:ebook_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:ebook_app/Features/home/data/repos/home_repo.dart';
 import 'package:ebook_app/core/errors/failures.dart';
@@ -18,12 +19,20 @@ class HomeRepoImpl implements HomeRepo {
       List<BookModel> books = [];
 
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        books.add(
+          BookModel.fromJson(item),
+        );
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
-      // TODO
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(
+        ServerFailure(
+          errMessage: e.toString(),
+        ),
+      );
     }
   }
 
