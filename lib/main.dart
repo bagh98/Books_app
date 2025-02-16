@@ -11,25 +11,26 @@ import 'core/utils/service_loacator.dart';
 
 void main() {
   setupServiceLocator();
-  runApp(const Ebooks());
+  runApp(const Bookly());
 }
 
-class Ebooks extends StatelessWidget {
-  const Ebooks({super.key});
+class Bookly extends StatelessWidget {
+  const Bookly({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => FeaturedBooksCubit(
-                  getIt.get<HomeRepoImpl>(),
-                )),
+          create: (context) => FeaturedBooksCubit(
+            getIt.get<HomeRepoImpl>(),
+          )..fetchFeaturedBooks(),
+        ),
         BlocProvider(
-            create: (context) => NewsetBooksCubit(
-                  getIt.get<HomeRepoImpl>(),
-                )),
+          create: (context) => NewsetBooksCubit(
+            getIt.get<HomeRepoImpl>(),
+          ),
+        )
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
