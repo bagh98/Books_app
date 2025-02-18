@@ -41,6 +41,15 @@ A Flutter app for previewing free books using the **Google Books API**. Built wi
 - The app uses the Google Books API to fetch book data. Learn more about the API [here](https://developers.google.com/books).
 
 ---
+## MVVM Architecture Overview
+- **The app follows the MVVM (Model-View-ViewModel) architecture**:
+- Model: Represents the data and business logic. It includes the data models (e.g., Book) and the repository layer for fetching data from the API.
+
+- View: Represents the UI layer. It includes the widgets and screens that display the data.
+
+- ViewModel: Acts as the intermediary between the View and the Model. It handles the business logic, manages state using Cubit, and updates the UI accordingly.
+
+
 
 
 ## How to Use
@@ -66,6 +75,14 @@ A Flutter app for previewing free books using the **Google Books API**. Built wi
    ```bash
    git clone https://github.com/your-username/ebook_app.git
    cd ebook_app
+2. **Install Dependencies:**:
+   ```bash
+   flutter pub get
+3. **Run the App:**:
+   ```bash
+   flutter run
+   
+
 
 
 ## Contact
