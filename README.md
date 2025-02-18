@@ -22,7 +22,7 @@ A Flutter app for previewing free books using the **Google Books API**. Built wi
 
 | **Home Screen** | **Book Details** | **Preview in Browser** |
 |------------------|------------------|------------------------|
-| ![Home Screen](screenshots/home_screen.png) | ![Book Details](screenshots/book_details.png) | ![Preview in Browser](screenshots/preview_browser.png) |
+| ![Home Screen](screenshots/screenshot1.png) | ![Book Details](screenshots/screenshots2.png)  |
 
 ---
 
