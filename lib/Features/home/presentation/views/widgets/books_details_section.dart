@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../data/models/book_model/book_model.dart';
 import 'book_rating.dart';
 import 'books_action.dart';
 import 'custom_book_item.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -17,15 +18,16 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustomBookImage(
-            imageUrl: 'https://i.ibb.co/cL2G5Zw/Path-210.png',
+          child: CustomBookImage(
+            imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
         const SizedBox(
           height: 40,
         ),
         Text(
-          'The Jungle Book',
+          textAlign: TextAlign.center,
+          book.volumeInfo.title!,
           style: Styles.textStyle30
               .copyWith(fontFamily: KGtSectraFine, fontWeight: FontWeight.bold),
         ),
@@ -35,7 +37,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            'Rudyard Kipling',
+            book.volumeInfo.authors?[0] ?? 'Unknown',
             style: Styles.textStyle18.copyWith(
                 fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
           ),
@@ -43,13 +45,17 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 18,
         ),
-        // const BookRating(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        // ),
+        BookRating(
+          rating: book.volumeInfo.averageRating ?? 0,
+          count: book.volumeInfo.ratingsCount ?? 0,
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
         const SizedBox(
           height: 37,
         ),
-        const BooksAction(),
+        BooksAction(
+          bookModel: book,
+        ),
       ],
     );
   }

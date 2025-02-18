@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../../data/models/book_model/book_model.dart';
 import 'books_details_section.dart';
 import 'costom_book_details_app_bar.dart';
 import 'similar_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
@@ -21,7 +22,9 @@ class BookDetailsViewBody extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                BookDetailsSection(),
+                BookDetailsSection(
+                  book: bookModel,
+                ),
                 Expanded(
                   child: SizedBox(
                     height: 50,

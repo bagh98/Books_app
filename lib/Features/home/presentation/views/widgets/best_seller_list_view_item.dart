@@ -44,10 +44,7 @@ class BookListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors != null &&
-                            bookModel.volumeInfo.authors!.isNotEmpty
-                        ? bookModel.volumeInfo.authors![0]
-                        : 'Unknown',
+                    bookModel.volumeInfo.authors?[0] ?? 'Unknown',
                     style: Styles.textStyle14.copyWith(color: Colors.grey),
                   ),
                   const SizedBox(
@@ -62,8 +59,7 @@ class BookListViewItem extends StatelessWidget {
                       ),
                       const Spacer(),
                       BookRating(
-                        rating:
-                            bookModel.volumeInfo.averageRating?.round() ?? 0,
+                        rating: bookModel.volumeInfo.averageRating ?? 0,
                         count: bookModel.volumeInfo.ratingsCount ?? 0,
                       ),
                     ],
