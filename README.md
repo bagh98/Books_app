@@ -37,6 +37,11 @@ A Flutter app for previewing free books using the **Google Books API**. Built wi
 - **Equatable**: For simplifying equality checks.
 
 ---
+## API Used
+- The app uses the Google Books API to fetch book data. Learn more about the API [here](https://developers.google.com/books).
+
+---
+
 
 ## How to Use
 
@@ -61,3 +66,13 @@ A Flutter app for previewing free books using the **Google Books API**. Built wi
    ```bash
    git clone https://github.com/your-username/ebook_app.git
    cd ebook_app
+
+
+## Contact
+
+For questions or suggestions, feel free to reach out:
+
+- **Email**: abonaorz@gmail.com  
+- **GitHub**: [Nour Bagh](https://github.com/bagh98)  
+- **LinkedIn**: [Nour Bagh](https://www.linkedin.com/in/nour-bagh)
+   
